@@ -1,17 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <SalutationName
+    v-model:salutation="form.salutation"
+    v-model:name="form.name"
+  />
+  <pre>{{ form }}</pre>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import SalutationName from '@/components/SalutationName.vue'
+import { reactive } from 'vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    HelloWorld,
+    SalutationName,
   },
-};
+  setup() {
+    const form = reactive({
+      salutation: '',
+      name: '',
+    })
+    return {
+      form,
+    }
+  },
+}
 </script>
 
 <style>
