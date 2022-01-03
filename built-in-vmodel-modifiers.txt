@@ -1,0 +1,4 @@
+Built in v-model modifiers
+.lazy = listen to the change event instead of input for native events
+.number = cast valid input to a number type
+.trim = Trim whitespace from the input
